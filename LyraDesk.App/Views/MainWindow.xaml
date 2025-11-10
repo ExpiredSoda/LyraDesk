@@ -1,0 +1,33 @@
+<Window
+    x:Class="LyraDesk.App.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:viewsDashboard="clr-namespace:LyraDesk.App.Views.Dashboard"
+    xmlns:viewsMenu="clr-namespace:LyraDesk.App.Views.Menu"
+    xmlns:viewsNavigation="clr-namespace:LyraDesk.App.Views.NavigationPanel"
+    xmlns:viewsStatusBar="clr-namespace:LyraDesk.App.Views.StatusBar"
+    Title="LyraDesk"
+    Width="900"
+    Height="600"
+    Style="{StaticResource ModernWindow}"
+    Loaded="Window_Loaded">
+
+    <DockPanel>
+
+        <!--  Menu Bar Top  -->
+
+        <viewsMenu:MenuBar DockPanel.Dock="Top" />
+
+        <!-- Status Bar -->
+        <viewsStatusBar:StatusBar DockPanel.Dock="Bottom" />
+
+        <!--  Navigation Panel Left Side  -->
+
+        <viewsNavigation:NavigationPanel DockPanel.Dock="Left" />
+        <!--  Main Content Area  -->
+
+        <!--  Main Content Area - Dashboard  -->
+        <viewsDashboard:Dashboard />
+
+    </DockPanel>
+</Window>

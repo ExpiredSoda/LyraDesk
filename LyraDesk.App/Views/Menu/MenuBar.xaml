@@ -1,0 +1,75 @@
+<UserControl
+    x:Class="LyraDesk.App.Views.Menu.MenuBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:LyraDesk.App.Views.Menu"
+    mc:Ignorable="d"
+    Height="Auto"
+    VerticalAlignment="Top"
+    HorizontalAlignment="Stretch">
+
+    <Border
+        BorderThickness="0,0,0,1"
+        BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"
+        Background="Transparent">
+        <Menu>
+                <!--  File  -->
+                <MenuItem Header="_File">
+                    <MenuItem
+                        Command="{Binding NewWindowCommand}"
+                        Header="_New Window"
+                        InputGestureText="Ctrl+N" />
+                    <MenuItem
+                        Command="{Binding ProfileCommand}"
+                        Header="_Profile"
+                        InputGestureText="Ctrl+P" />
+                    <MenuItem
+                        Command="{Binding LoginCommand}"
+                        Header="_Login"
+                        InputGestureText="Ctrl+L"/>
+                    <MenuItem
+                        Command="{Binding LogoutCommand}"
+                        Header="_Logout"
+                        InputGestureText="Ctrl+Shift+L"/>
+                    <Separator />
+                    <MenuItem
+                        Command="{Binding ExitCommand}"
+                        Header="E_xit"
+                        InputGestureText="Ctrl+Q" />
+                </MenuItem>
+
+                <!--  Program  -->
+                <MenuItem Header="_Program">
+                    <MenuItem Command="{Binding ChooseProgramCommand}" Header="_Choose Program..." />
+                </MenuItem>
+
+                <!--  View  -->
+                <MenuItem Header="_View">
+                    <MenuItem
+                        Command="{Binding ToggleThemeCommand}"
+                        Header="_Toggle Theme"
+                        InputGestureText="Ctrl+T" />
+                </MenuItem>
+
+                <!--  Settings  -->
+                <MenuItem Header="_Settings">
+                    <MenuItem
+                        Command="{Binding OpenSettingsCommand}"
+                        Header="_Open Settings"
+                        InputGestureText="Ctrl+," />
+                </MenuItem>
+
+                <!--  Help  -->
+                <MenuItem Header="_Help">
+                    <MenuItem
+                        Command="{Binding OpenHelpCommand}"
+                        Header="_Help / Documentation"
+                        InputGestureText="F1" />
+                    <Separator />
+                    <MenuItem Command="{Binding AboutCommand}" Header="_About LyraDesk" />
+                </MenuItem>
+            </Menu>
+        </Border>
+</UserControl>
